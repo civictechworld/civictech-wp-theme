@@ -1,0 +1,34 @@
+/*
+Theme Name: CivicTech.World
+Author: Ben Erwin
+Author URI: http://powersimple.me/
+Description: Original shell based on BEONEPAGE by BeTheme, 
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: civictech
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you"ve learned with others.
+*/
+
+
+@import "partials/template";
+@import "partials/overrides";
+@import "partials/scraper";
+
+td{
+    vertical-align: top;
+}
+.outer{
+    position: absolute;
+    width:100%;
+    top:20%; 
+}
+.hero{
+    background-image:url(/wp-content/uploads/2018/06/networkedworld.jpg);
+    
+}
+.site-header{
+    position: absolute;
+    height:20%;
+}
