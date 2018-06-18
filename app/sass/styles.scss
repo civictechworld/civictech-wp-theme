@@ -32,3 +32,61 @@ td{
     position: absolute;
     height:20%;
 }
+.site-footer {
+    position: fixed;
+    background-color: #18191b;
+    padding:10px;
+    height:125px;
+    @media(max-width:768px){
+        height:150px;
+    }
+}
+.bcrumbs{
+    padding:10px;
+}
+#sponsor-links{
+    width:100%;
+    display: table;
+    margin-top:10px;
+}
+.sponsor{
+    display: table-cell;
+    height:50px!important;
+    width:50%;
+    text-align: center;
+    a{
+        
+    img {
+        height: 100%;
+        width: auto;
+        margin: 0px auto;
+    }
+
+    }
+
+}
+#social-links {
+    height:30px;
+    display: table;
+    position: absolute;
+    bottom:10px;
+    right:10px;
+    width:auto;
+    @media(max-width:768px) {
+        margin:0px auto;
+    }
+}
+.social {
+
+    display: table-cell;
+    height: 30px !important;
+    width: 30%;
+    text-align: center;
+    a {
+        img {
+            height: 100%;
+            width: auto;
+            margin: 0px auto;
+        }
+    }
+}

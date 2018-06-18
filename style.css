@@ -741,6 +741,8 @@ figcaption { position: absolute; bottom: 15px; left: 20px; color: #eee; backgrou
 
 .table { background-color: transparent !important; }
 
+.site-footer { position: fixed; background-color: #18191b; }
+
 #scraper td, #scraper th { vertical-align: top; }
 #scraper #results a:visited { color: #f0f !important; }
 #scraper #results #results em { color: #999; }
@@ -768,5 +770,21 @@ td { vertical-align: top; }
 .hero { background-image: url(/wp-content/uploads/2018/06/networkedworld.jpg); }
 
 .site-header { position: absolute; height: 20%; }
+
+.site-footer { position: fixed; background-color: #18191b; padding: 10px; height: 125px; }
+@media (max-width: 768px) { .site-footer { height: 150px; } }
+
+.bcrumbs { padding: 10px; }
+
+#sponsor-links { width: 100%; display: table; margin-top: 10px; }
+
+.sponsor { display: table-cell; height: 50px !important; width: 50%; text-align: center; }
+.sponsor a img { height: 100%; width: auto; margin: 0px auto; }
+
+#social-links { height: 30px; display: table; position: absolute; bottom: 10px; right: 10px; width: auto; }
+@media (max-width: 768px) { #social-links { margin: 0px auto; } }
+
+.social { display: table-cell; height: 30px !important; width: 30%; text-align: center; }
+.social a img { height: 100%; width: auto; margin: 0px auto; }
 
 /*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJzdHlsZS5jc3MiXSwiZmlsZSI6InN0eWxlLmNzcyJ9 */
