@@ -16,7 +16,10 @@ get_header(); ?>
 			<div class="col-md-9">
 				<div id="primary" class="content-area">
 					<main id="main" class="site-main" role="main">
-						
+                        
+                    
+
+                    
 					</main><!-- #main -->
 				</div><!-- #primary -->
 			</div><!-- col-md-9 -->

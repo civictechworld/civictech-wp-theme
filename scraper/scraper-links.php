@@ -80,4 +80,16 @@ $sql = "no_link = 0 and scraped = 1  and error400 = 0 and error404 = 0 and isPDF
     }
     ?>
 </div>
+<div>
+    <form method="get" action="#">
+        <input type="hidden" name="scrape" value="1">
+        <input type="hidden" name="key" value="0">
+        <input type="text" name="url" value="">
+        <input type="submit" value="scrape">
+        
+        
+        
+
+    </form>
+</div>
 

@@ -28,15 +28,11 @@ get_header(); ?>
                 if(@$_GET['resource']){
                     extract(getTags("purpose,process",$_GET['resource']));
               
-
-              $path=  get_stylesheet_directory()."/app/json/locations.json";
+ $path=  get_stylesheet_directory()."/app/json/locations.json";
                $json = file_get_contents($path);
                $locations = (array) json_decode($json);
 
-               var_dump(tagLocations($locations,$url_content));
-   
-                }
-
+             
                 ?>
             
         </td>
@@ -45,9 +41,25 @@ get_header(); ?>
             <?php
              if(@$_GET['resource']){
             echo "Keywords detected: ".beliefmedia_keywords($url_content, $min_word_length = 3, $min_word_occurrence = 2, $as_array = false, $max_words = 8, $restrict = false);
+            print "<Br>in: <BR>" ;
             $content_array = parseContent($url_content);
-            }
+                foreach($content_array as $key => $word){
+                    print "$word ";
+                }
+            print "<BR><BR><BR>";
+ $location_tags = tagLocations($locations,$url_content);
+                    if(count($location_tags)){
+                         foreach($location_tags as $key => $location){
+                             if($location['count']){
+                              print "$location[location], ";
+                           }
+                        }
+                    }
 
+                }
+
+             
+            }
             ?>
 
         </td>

@@ -18,7 +18,9 @@
 			<div class="row">
 				<div class="col-md-12 clearfix">
 					<div class="site-branding">
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<div id="tagline"><?=get_bloginfo( 'description' )?></div>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					
 					</div><!-- .site-branding -->
 
 					<span id="mobile-menu" class="mobile-menu"></span>
@@ -26,11 +28,28 @@
 					<?php
 						the_title( '<br><h1 class="page-title">', '</h1>' );
 
-						beonepage_get_breadcrumbs();
+						//beonepage_get_breadcrumbs();
 					?>
+
+
+			
+
+
+
 				</div><!-- .col-md-12 -->
 			</div><!-- .row -->
 		</div><!-- .container -->
+		<div id="admin-nav">
+			<ul>
+				<li><a href="/admin/scrape">Scape</a></li>
+				<li><a href="/admin/import">Import</a></li>
+				<li><a href="/admin/tagging">Tagging</a></li>
+				
+				
+			</ul>
+
+		</div>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

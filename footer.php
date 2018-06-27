@@ -21,9 +21,7 @@
 </div><!-- #outer -->
 </div><!-- #page -->
 <footer id="colophon" class="site-footer clearfix" role="contentinfo">
-		<div id="social-links">
-
-		</div>
+		<?php if(@$_GET['sponsors']){?>
 		<div id="sponsor-links">
 			<div id="silicon-harlem" class="sponsor">
 						<a href="http://siliconharlem.net" target="_blank"><img src="/wp-content/uploads/2018/06/silicon-harlem-logo.svg" alt="Silicon Harlem"></a>
@@ -33,6 +31,8 @@
 						<a href="https://www.civichalllabs.org" target="_blank"><img src="/wp-content/uploads/2018/06/civic-hall-labs.jpg" alt="Civic Hall Labs"></a>
 			</div>
 		</div>
+		<?php } ?>
+
 		<div id="social-links">
 			<div id="facebook" class="social">
 						<a href="https://www.facebook.com/civictech.world/" target="_blank"><img src="/wp-content/uploads/2018/06/facebook-01.svg" alt="Facebook"></a>
@@ -41,8 +41,11 @@
 			<div id="twitter" class="social">
 						<a href="https://twitter.com/CivicTechWorld" target="_blank"><img src="/wp-content/uploads/2018/06/twitter-01.svg" alt="Twitter"></a>
 			</div>
-			<div id="twitter" class="social">
+			<div id="github" class="social">
 						<a href="https://github.com/civictechworld" target="_blank"><img src="/wp-content/uploads/2018/06/github-01.svg" alt="GitHub"></a>
+			</div>
+			<div id="creative-commons" class="cc">
+						<a href="https://bit.ly/organizecivictech" target="_blank"><img src="/wp-content/uploads/2018/06/creative-commons-01.svg" alt="Creative Commons"></a>
 			</div>
 			
 		</div>

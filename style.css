@@ -757,9 +757,9 @@ figcaption { position: absolute; bottom: 15px; left: 20px; color: #eee; backgrou
 #scraper tr.form-header th { border-bottom: 1px solid #fff; }
 #scraper .diff { color: #aa0; }
 #scraper .save { background-color: #380d0d; color: #0a0; }
-#scraper #scraper-form td.form-field { width: 20%; }
-#scraper #scraper-form td.scrape-data { width: 30%; overflow-wrap: break-word; word-wrap: break-word; -ms-word-break: break-all; /* This is the dangerous one in WebKit, as it breaks things wherever */ word-break: break-all; /* Instead use this non-standard one: */ word-break: break-word; /* Adds a hyphen where the word breaks, if supported (No Blink) */ -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
-#scraper #scraper-form td.form-container { width: 50%; }
+#scraper #scraper-form td.form-field, #scraper .table td.form-field { width: 20%; }
+#scraper #scraper-form td.scrape-data, #scraper .table td.scrape-data { width: 30%; overflow-wrap: break-word; word-wrap: break-word; -ms-word-break: break-all; /* This is the dangerous one in WebKit, as it breaks things wherever */ word-break: break-all; /* Instead use this non-standard one: */ word-break: break-word; /* Adds a hyphen where the word breaks, if supported (No Blink) */ -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
+#scraper #scraper-form td.form-container, #scraper .table td.form-container { width: 50%; }
 
 .list-wrap { max-height: 150px; overflow-y: scroll; }
 
@@ -767,12 +767,17 @@ td { vertical-align: top; }
 
 .outer { position: absolute; width: 100%; top: 20%; }
 
-.hero { background-image: url(/wp-content/uploads/2018/06/networkedworld.jpg); }
+.hero { background-image: url(/wp-content/uploads/2018/06/networkedworld.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; }
 
 .site-header { position: absolute; height: 20%; }
 
+.page-title { bottom: -40px; position: absolute; }
+@media (max-width: 1000px) { .page-title { bottom: -80px; } }
+
 .site-footer { position: fixed; background-color: #18191b; padding: 10px; height: 125px; }
 @media (max-width: 768px) { .site-footer { height: 150px; } }
+
+.site-title a { text-shadow: 3px 2px #18191b; }
 
 .bcrumbs { padding: 10px; }
 
@@ -781,10 +786,20 @@ td { vertical-align: top; }
 .sponsor { display: table-cell; height: 50px !important; width: 50%; text-align: center; }
 .sponsor a img { height: 100%; width: auto; margin: 0px auto; }
 
-#social-links { height: 30px; display: table; position: absolute; bottom: 10px; right: 10px; width: auto; }
+#tagline { text-shadow: 2px 2px #18191b; }
+
+#social-links { height: 30px; display: table; position: absolute; bottom: 10px; right: 25px; width: auto; }
 @media (max-width: 768px) { #social-links { margin: 0px auto; } }
 
-.social { display: table-cell; height: 30px !important; width: 30%; text-align: center; }
+.social { display: table-cell; height: 30px !important; width: 50px; text-align: center; }
 .social a img { height: 100%; width: auto; margin: 0px auto; }
+
+.cc { display: table-cell; height: 30px !important; text-align: center; }
+.cc a img { height: 100%; width: auto; margin: 0px auto; }
+
+#admin-nav { right: 10px; top: 10px; position: absolute; }
+@media (max-width: 900px) { #admin-nav { display: none; } }
+#admin-nav ul li { list-style: none; }
+#admin-nav ul li a { text-shadow: 2px 2px #18191b; }
 
 /*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJzdHlsZS5jc3MiXSwiZmlsZSI6InN0eWxlLmNzcyJ9 */

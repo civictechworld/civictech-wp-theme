@@ -117,13 +117,17 @@
     function tagLocations($locations,$url_content){
             $tags = array();
             foreach($locations as $iso2=>$country){
+                
                 extract((array) $country);
-                $country_strings = "$iso2,$iso3,$official,$name";
-                if($count = count(findTag($country_strings,$url_content))){
-                    print "name<BR>";
+                
+               
+                
+               $country_strings = "$iso2,$iso3,$official,$name";
+                if($count = count(findTag($name,$url_content))){
+                    //print "$name<BR>";
                 
                     array_push($tags,array(
-                        "id" => $id,
+                        
                         "location" => $name,
                         "count" => $count
                         
@@ -134,14 +138,13 @@
 
                 if(count($provinces)){
                     foreach($provinces as $key =>$province){
-                        print "$province<BR>";
+                        //print "$province<BR>";
                         
-                        $province_strings = "$name,$province[abbr]";
+                       
 
-                        if($count = count(findTag($provnce_strings,$url_content))){
+                        if($count = count(findTag($province,$url_content))){
                             array_push($tags,array(
-                                "id" => $province['id'],
-                                "location" =>$province['name'],
+                                "location" =>$province,
                                 "count" => $count
                                 
                             ));
@@ -150,32 +153,23 @@
                 }
                 if(count($cities)){
                     foreach($cities as $key =>$city){
+                        //print "$province<BR>";
                         
-                        $city_strings = '$city[name]';
-                        if($count = count(findTag($city_strings,$url_content))){
-                            print "$city<BR>";
-                            if(@$city_states[$key]!=''){
-                                $name = $city_states[$key];
-                            }
+                       
 
-                        
+                        if($count = count(findTag($city,$url_content))){
                             array_push($tags,array(
-                                "id" => $city['id'],
-                                "location" => $city['name'],
+                                "location" =>$city,
                                 "count" => $count
+                                
                             ));
-
                         }
                     }
+                    
                 }
-                if(count($city_states)){
-                    foreach($city_states as $key =>$city_state){
-                         
-                        print "$city_state<BR>";
-
-                    }
-                }
+             
             }
+          
             return $tags;
 
     }
@@ -236,7 +230,7 @@
         return explode(" ",$url_content);
         foreach($content_array as $key => $word){
             if(trim($word) != ''){
-                print "$word<BR>";
+                print "$word, ";
             }
         }
     }
