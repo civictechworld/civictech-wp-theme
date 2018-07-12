@@ -63,7 +63,7 @@ function buildLocationForm(country, province, city) {
                 province_selected = ' selected'
             }
 
-            province_options += '\t<option value="' + p + '"' + country_selected + '>' + provinces[p] + '</option>\n'//load options
+            province_options += '\t<option value="' + p + '"' + province_selected + '>' + provinces[p] + '</option>\n'//load options
             province_count++;
         }
     if (province_count > 0) { //If in fact, you have provinces. 
@@ -79,8 +79,8 @@ function buildLocationForm(country, province, city) {
         if (cities[c] == location_city) {
             city_selected = ' selected'
         }
-
-        city_options += '\t<option value="' + p + '"' + country_selected + '>' + cities[p] + '</option>\n'//load options
+        console.log(cities)
+        city_options += '\t<option value="' + p + '"' + city_selected + '>' + cities[c] + '</option>\n'//load options
         city_count++;
     }
     if (city_count > 0) { //If in fact, you have cities. 
