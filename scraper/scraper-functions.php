@@ -143,9 +143,11 @@ function parseLinks($data){
 
 //Twitter
                 $links['twitter'] = basename($value['url']);
-            } else if(strpos($value['url'], 'facebook.com') !== false){
+			} else if(strpos($value['url'], 'facebook.com') !== false //facebook good
+			 && strpos($value['url'], 'sharer') != true){ // share url bad
 //Facebook
-                $links['facebook'] = basename($value['url']);
+				$links['facebook'] = $value['url'];
+				
             } else if(strpos($value['url'], 'instagram.com') !== false){
 //Instagram
                 $links['instagram'] = basename($value['url']);
@@ -155,7 +157,8 @@ function parseLinks($data){
             } else if(strpos($value['url'], 'vimeo.com') !== false){
  //Vimeo
                 $links['vimeo'] = basename($value['url']);
-            } else if(strpos($value['url'], 'linkedin.com') !== false){
+			} else if(strpos($value['url'], 'linkedin.com') !== false  //linked in good
+				&& strpos($value['url'], 'shareArticle') != true){// share url bad
 //LinkedIn
                 $links['linkedin'] = $value['url'];
             } else if(strpos($value['url'], '.xml') !== false){

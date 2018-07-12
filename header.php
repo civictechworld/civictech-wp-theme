@@ -41,7 +41,7 @@
 		</div><!-- .container -->
 		<div id="admin-nav">
 			<ul>
-				<li><a href="/admin/scrape">Scape</a></li>
+				<li><a href="/admin/scrape">Scrape</a></li>
 				<li><a href="/admin/import">Import</a></li>
 				<li><a href="/admin/tagging">Tagging</a></li>
 				

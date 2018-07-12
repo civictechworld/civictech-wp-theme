@@ -30,6 +30,7 @@ $sql = "no_link = 0 and scraped = 1  and error400 = 0 and error404 = 0 and isPDF
     }
 ?>
 </div>
+<!-- NO LONGER NECESSARY
 <h4>ERROR 400 (Can't Scrape)</h4>
 <div  class="list-wrap">
 <?php
@@ -46,6 +47,7 @@ $sql = "no_link = 0 and scraped = 1  and error400 = 0 and error404 = 0 and isPDF
     }
     ?>
 </div>
+-->
 <h4>PDF (Can't Scrape)</h4>
 <div  class="list-wrap">
 <?php

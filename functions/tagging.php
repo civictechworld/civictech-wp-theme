@@ -2,7 +2,7 @@
 
     function getCountriesTags($and=""){
     global $wpdb;
-        $sql="select t.name as label, t.slug, tt.description, tt.term_taxonomy_id as ttid, t.term_id as tid from wp_terms t, wp_term_taxonomy tt where t.term_id = tt.term_id and tt.taxonomy = 'countries' $and order by t.term_id";
+        $sql="select t.name as label, t.slug, tt.description, tt.term_taxonomy_id as ttid, t.term_id as tid from wp_terms t, wp_term_taxonomy tt where t.term_id = tt.term_id and tt.taxonomy = 'countries' $and order by t.name";
         $q = $wpdb->get_results($sql);
         $counter = 1;
         $countries = array();

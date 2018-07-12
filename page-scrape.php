@@ -42,9 +42,7 @@ if(@$_POST['id']){
 
 			</th>
 			<td class="pane preview">
-				 <div id="iframe">
-					<iframe src="<?=@$_GET['url']?>"></iframe> 
-				</div>
+				
 				<div id="results">
 					<?php
 					require_once "scraper/scraper-parse.php"; 
@@ -68,4 +66,8 @@ if(@$_POST['id']){
 
 		</tr>
 	</table>
+	<script>
+	var json_path = '<?=get_stylesheet_directory_uri()?>/app/json/'
+
+	</script>
 	<?php get_footer(); ?>

@@ -2,7 +2,9 @@
     
     if(@$_GET['url']){
         ?>
-       
+        <div id="iframe">
+					<iframe src="<?=@$_GET['url']?>"></iframe> 
+				</div>
    LINK: <a href="<?=@$_GET['url']?>"target="_blank"><?=@$_GET['url']?></a> | <a href="view-source:<?=@$_GET['url']?>" target="_blank">SRC</a>
 
         <?php
@@ -89,34 +91,51 @@
             }
         }
         if(@$continue != false){
+
+            
             $other_images= '';
             $logo_url = '';
+            print '<form name="scraped-images" action="" method="post" id="scraped-images">';
+            print "Images<hr><table id='scraped-image-list'>";
+            print "<tr><td>Scraped Images</td><td>Logo</td><td>Share Image</td></tr>";
             foreach($meta_data['image_array'] as $key =>$value){
-                if(strpos(strtolower($value['alt']),"logo") || strpos(strtolower($value['src']),"logo")){
-                $logo_url = $value['src'];
+                 if(strpos(strtolower($value['alt']),"logo") || strpos(strtolower($value['src']),"logo")){
+                        $logo_url = $value['src'];
+                        $logo_checked = " checked";
                     if(!strpos($logo_url,"//")){
-                $logo_url = $_GET['url']."/".$logo_url;                    
+                        $logo_url = $_GET['url']."/".$logo_url;
                     }
+                } else {
+                    $logo_checked = "";
+                }
+
+                
+                print '<tr><td><img class="scrape-thumbail" src="'.$value['src'].'"></td>
+                <td><input name="logo_url" type="radio" value="'.$value['src'].'"'.$logo_checked.'></td>
+
+                <td><input name="share_image_url" type="radio" value="'.$value['src'].'"></td>
+                
+                
+                </tr>';
 
 
                
-                }
-
-                $other_images .= $value['src']." | ".$value['alt']."<br>";
+             
                 if(strpos(strtolower($value['alt']),"logo")){
-                $other_images .="</u>";
+               
                 }
             }
             if(@$logo_url != ''){
-                print '<BR>LOGO:'.$logo_url.'<br><img src="'.$logo_url.'"><BR>';
+               // print '<BR>LOGO:'.$logo_url.'<br><img class="form-thumbnail" src="'.$logo_url.'"><BR>';
             } 
             if(@$share_image_url){
                 
-                print '<BR>Share Image:'.$share_image_url .'<BR><img src="'.$share_image_url.'"><BR>';
+                //print '<BR>Share Image:'.$share_image_url .'<BR><img class="form-thumbnail" src="'.$share_image_url.'"><BR>';
 
 
             } 
-
+            print "</tr></table>
+            </form>";
     
             extract(parseLinks($meta_data['link_array']));
 
@@ -179,9 +198,8 @@
     ?>
         </div>
  
-        <hr>
-        <strong>Images</strong>
-        <div class="list-wrap"><BR><?=$other_images?></div>
+       
+       
         <hr>
         <strong>META</strong>
         <div class="list-wrap"><BR><?=$other_meta?></div>
@@ -194,12 +212,19 @@
                             
 
     <?php
-    }
-
- }
- ?><h2>Dead Link</h2>
+    } else {
+        ?>
+        <h2>Dead Link</h2>
                     <form method="post" action="#">
                         <input type="hidden" name="id" value="<?=$_GET['key']?>">
                         <input type="hidden" name="error404" value="1">
                         <input type='submit' class="save" value="404 Dead Link">
                     </form>
+        <?php
+    }
+
+ } else {
+     
+     print "SELECT A LINK ON THE LEFT";
+ }
+ ?>

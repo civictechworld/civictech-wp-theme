@@ -2,7 +2,7 @@
 Theme Name: CivicTech.World
 Author: Ben Erwin
 Author URI: http://powersimple.me/
-Description: Original shell based on BEONEPAGE by BeTheme, 
+Description:  
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -801,5 +801,9 @@ td { vertical-align: top; }
 @media (max-width: 900px) { #admin-nav { display: none; } }
 #admin-nav ul li { list-style: none; }
 #admin-nav ul li a { text-shadow: 2px 2px #18191b; }
+
+.form-thumbnail { max-width: 200px; height: auto; }
+
+.scrape-thumbail { max-height: 75px; width: auto; }
 
 /*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJzdHlsZS5jc3MiXSwiZmlsZSI6InN0eWxlLmNzcyJ9 */
