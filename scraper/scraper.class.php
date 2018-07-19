@@ -79,7 +79,7 @@ class meta {
         $title = $doc->getElementsByTagName('title');
         $lang = $doc->getElementsByTagName('html');
         $addr = $doc->getElementsByTagName('address');
-
+        $logo = $doc->getElementById('logo');
                 
        
        
@@ -90,18 +90,21 @@ class meta {
             $image_array[] = array('src' => $link->getAttribute('src'), 'alt' => $link->getAttribute('alt'));
         }
 
-
-
+      
         // Get and display what you need:
         
         $ary = [];
       
         $ary['title'] = @$title->item(0)->nodeValue;
         $ary['lang'] = @$lang->item(0)->getAttribute('lang');
+        
         $ary['address'] = @$addr->item(0)->nodeValue;
         $ary['contact_url'] = "";
         
-        
+        if(@$logo){
+
+         print $ary['logo_svgtag'] = $logo->tagName;
+        }
 
 
         
@@ -133,6 +136,65 @@ class meta {
                 $ary['blog_url'] = $this_link;
                 
             }
+
+
+            if(strpos(strtolower($this_link),"jobs") || strpos(strtolower("careers"),$this_text) || strpos(strtolower($this_link),"jobs") || strpos(strtolower("careers"),$this_text)){
+                if(!strpos($this_link,"//")){
+                    $this_link = $url.$this_link;
+                }
+                
+
+                $ary['jobs_url'] = $this_link;
+                
+            }
+
+            if(strpos(strtolower($this_link),"apply") || strpos(strtolower("apply"),$this_text)){
+                if(!strpos($this_link,"//")){
+                    $this_link = $url.$this_link;
+                }
+                
+
+                $ary['apply_url'] = $this_link;
+                
+            }
+
+
+            if(strpos(strtolower($this_link),"events") || strpos(strtolower("events"),$this_text)){
+                if(!strpos($this_link,"//")){
+                    $this_link = $url.$this_link;
+                }
+                
+
+                $ary['events_url'] = $this_link;
+                
+            }
+
+
+            if(strpos(strtolower($this_link),"conference") || strpos(strtolower("conference"),$this_text)){
+                if(!strpos($this_link,"//")){
+                    $this_link = $url.$this_link;
+                }
+                
+
+                $ary['conference_url'] = $this_link;
+                
+            }
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
 

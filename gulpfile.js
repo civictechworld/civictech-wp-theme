@@ -62,8 +62,8 @@ gulp.task('scripts_custom', function () {
 
 gulp.task('scripts_vendor', function () {
   return gulp.src('app/js/vendor/**/*.js')
-    // .pipe(jshint())
-    // .pipe(jshint.reporter('default'))
+     .pipe(jshint())
+     .pipe(jshint.reporter('default'))
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('./'))
     .pipe(rename({ suffix: '.min' }))

@@ -104,12 +104,15 @@
                         $logo_checked = " checked";
                     if(!strpos($logo_url,"//")){
                         $logo_url = $_GET['url']."/".$logo_url;
-                    }
+                    } 
+                   
                 } else {
                     $logo_checked = "";
                 }
 
-                
+                if(strpos($value['src'],"//") == false){
+                   $value['src'] = @$_GET['url'].$value['src'];
+                }
                 print '<tr><td><img class="scrape-thumbail" src="'.$value['src'].'"></td>
                 <td><input name="logo_url" type="radio" value="'.$value['src'].'"'.$logo_checked.'></td>
 
@@ -158,6 +161,55 @@
                 extract(parseLinks($blog_data['link_array']));
                 $url_content .= $blog_data['url_content'];
             }
+
+
+            if(@$meta_data['jobs_url'] != ""){
+                print "<br>Jobs URL | ".$jobs_url = @$meta_data['jobs_url'];
+                $jobs_data = scrapeLink(@$meta_data['jobs_url']);
+
+                extract(parseLinks($jobs_data['link_array']));
+                $url_content .= $jobs_data['url_content'];
+            }
+            if(@$meta_data['apply_url'] != ""){
+                print "<br>Application URL | ".$apply_url = @$meta_data['apply_url'];
+                $apply_data = scrapeLink(@$meta_data['apply_url']);
+
+                extract(parseLinks($apply_data['link_array']));
+                $url_content .= $apply_data['url_content'];
+            }
+            if(@$meta_data['events_url'] != ""){
+                print "<br>Events URL | ".$events_url = @$meta_data['events_url'];
+                $events_data = scrapeLink(@$meta_data['events_url']);
+
+                extract(parseLinks($events_data['link_array']));
+                $url_content .= $events_data['url_content'];
+            }
+            if(@$meta_data['conference_url'] != ""){
+                print "<br>Conference URL | ".$conference_url = @$meta_data['conference_url'];
+                $conference_data = scrapeLink(@$meta_data['conference_url']);
+
+                extract(parseLinks($conference_data['link_array']));
+                $url_content .= $conference_data['url_content'];
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             if(@$meta_data['about_url'] != ""){
                 print "<br>about URL | ".$about_url = @$meta_data['about_url'];
                 $about_data = scrapeLink(@$meta_data['about_url']);

@@ -139,7 +139,7 @@ function Scraper( $meta_boxes ) {
 function parseLinks($data){
 	$links = array();
 	foreach($data as $key =>$value){
-            if (strpos($value['url'], 'twitter.com') !== false) {
+            if (strpos($value['url'], 'twitter.com') !== false && strpos($value['url'], 'share?')  != true) {
 
 //Twitter
                 $links['twitter'] = basename($value['url']);
@@ -171,7 +171,7 @@ function parseLinks($data){
             } else if(strpos($value['url'], 'tumblr.com') !== false){
 //Tumblr
                 $links['tumblr'] = $value['url'];
-            } else if(strpos($value['url'], 'plus.google') !== false){
+            } else if(strpos($value['url'], 'plus.google') !== false  && strpos($value['url'], 'share?')  != true){
 //Tumblr
                 $links['google_plus'] = $value['url'];
             }  else if(strpos($value['url'], 'medium.com') !== false){

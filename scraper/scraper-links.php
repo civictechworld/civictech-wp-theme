@@ -1,8 +1,39 @@
 <h4>UNSCRAPED</h4>
 <div  style="height:400px;overflow-y:scroll">
 <?php
-$sql = "no_link = 0 and scraped = 0  and error400 = 0 and error404 = 0 and isPDF = 0";
+
+if(@$_GET['skip']){
+    global $wpdb;
+  
+    $set = 'UPDATE civictech_data set skipped = 1  where id = '.$_GET['skip'];
+    
+    $q = $wpdb->query($set);
+    
+} else if(@$_GET['isArticle']){
+    global $wpdb;
+  
+    $set = 'UPDATE civictech_data set isArticle = 1  where id = '.$_GET['isArticle'];
+    
+    $q = $wpdb->query($set);
+    
+   
+
+} else if(@$_GET['dead']){
+    global $wpdb;
+  
+    $set = 'UPDATE civictech_data set error404 = 1  where id = '.$_GET['dead'];
+    
+    $q = $wpdb->query($set);
+    
+   
+
+}
+
+
+$sql = "no_link = 0 and scraped = 0  and error400 = 0 and error404 = 0 and isPDF = 0 and isFacebook = 0 and isTwitter = 0 and isWikipedia=0 and isLinkedIn=0 and skipped = 0 and isMedium = 0 and isArticle = 0";
+
 $unscrapedlinks = getLinkArray($sql);
+$next = '';
 foreach($unscrapedlinks as $key => $value){
 
     print $value['id'].' <a href="?scrape=1&key='.$value['id'].'&url='.$value['URL'].'">'.$value['name'].'</a><br>';
@@ -10,7 +41,13 @@ foreach($unscrapedlinks as $key => $value){
     if(@$_GET['key'] == $value['id']){
         $this_link = $value;
     }
-
+   
+    if($key == 1){
+        $next = '<a href="?scrape=1&key='.$value['id'].'&url='.$value['URL'].'">'.$value['name'].'</a>';
+        $skip = '<a href="?scrape=1&skip='.@$_GET['key'].'&key='.$value['id'].'&url='.$value['URL'].'">SKIP</a>';
+        $article = '<a href="?scrape=1&isArticle='.@$_GET['key'].'&key='.$value['id'].'&url='.$value['URL'].'">ARTICLE</a>';
+        $dead = '<a href="?scrape=1&dead='.@$_GET['key'].'&key='.$value['id'].'&url='.$value['URL'].'">DEAD</a>';
+    }
 }
 ?>
 </div>

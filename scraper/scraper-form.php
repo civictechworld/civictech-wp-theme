@@ -1,5 +1,5 @@
    
-   <form method="post" action="#">
+   <form method="post" action="#" id="scrape-form">
     <input type="hidden" name="id" value="<?=$_GET['key']?>">
     <input type="hidden" name="scraped" value="1">
     <input type="hidden" name="error400" value="0">
@@ -7,12 +7,17 @@
 
 
 
-<tr><th>Field</th><td>Scrape Data</td><td><input type='submit' class="save" value="SAVE"></td></tr>
+<tr><th>Field</th><td>Scrape Data
+    <br><?=@$skip?> | <?=$article?> | <?=$dead?>
+</td><td><input type='submit' id="save-button" class="save" value="SAVE?"><span id="next-link" style="visibility:hidden">Next: <?=@$next?></span>
+
+</td></tr>
 
 
    <?php
    
-	$fields = "URL,title,description,keywords,language,logo_url,share_image_url,contact_url,blog_url,twitter,facebook,linkedin,github,tumblr,google_plus,medium,telegram,slack,skype,instagram,youtube,vimeo,pinterest,behance,rss,email,phone,address,address2,city,state,postal_code,country,location_country,location_province,location_city,url_content";
+    $fields = "modified,URL,title,description,keywords,language,logo_url,share_image_url,logo_svgtag,contact_url,blog_url,apply_url,jobs_url,events_url,conference_url,twitter,facebook,linkedin,github,tumblr,google_plus,medium,telegram,slack,skype,instagram,youtube,vimeo,pinterest,behance,rss,email,phone,address,address2,city,state,postal_code,country,location_country,location_province,location_city,url_content";
+    
 		ob_start();		
       
         $location_country = $this_link["location_country"];
@@ -57,7 +62,10 @@
        } else if ($field == 'URL'){     
             print '<input type="text" name="'.$field.'" id="'.$field.'" value="'.@$_GET['url'].'">';
  
-       } else {
+       } else if ($field == 'modified'){     
+        print '<input type="checkbox" name="'.$field.'" id="'.$field.'" value="1">';
+
+   } else {
 
             print '<input type="text" name="'.$field.'"  id="'.$field.'" value="'.@$field_value.'">';
 
@@ -76,7 +84,8 @@
     ?>
 
 
-
+<?=$fields_table?>
+<!--
 
 <tr><th>Location</th><td colspan="2">
     <table>
@@ -88,7 +97,7 @@
     <td><select name="location_city" id="location_city"></select></td></tr></table>
     </td><tr>
 
-<?=$fields_table?>
+
     <tr><td></td><td></td><td><input type='submit' class="save" value="SAVE"></td></tr>
 
 </table>
@@ -101,4 +110,4 @@
     var location_province = '<?=@$location_province?>';
     var location_city = '<?=@$location_city?>';
     
-</script>
+</script>-->

@@ -10,6 +10,7 @@
 require_once get_template_directory() . '/scraper/scraper-functions.php';
 $links = getLinkArray(1);
 if(@$_POST['id']){
+	/*
     global $wpdb;
     $set = 'UPDATE civictech_data set ';
     $sets = array();
@@ -23,8 +24,11 @@ if(@$_POST['id']){
     }
     $set .= implode(",",$sets);
     $set .= ' where id = '.$_POST['id'];
-    $wpdb->query($set);
-   
+	$q = $wpdb->query($set);
+	if($q == false){
+		print $set;
+	}*/
+   //var_dump($q);
 }
 
 
@@ -45,6 +49,7 @@ if(@$_POST['id']){
 				
 				<div id="results">
 					<?php
+					
 					require_once "scraper/scraper-parse.php"; 
 
 					?>
@@ -54,6 +59,7 @@ if(@$_POST['id']){
 			</td>
 			<td class="pane form">
 				<?php 
+				
 
 				if(@$this_link){
 				

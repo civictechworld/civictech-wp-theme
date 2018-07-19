@@ -4,6 +4,37 @@ function render() {
 
 }
 
+(function($){
+    $('#scrape-form').submit(function(e){
+     event.preventDefault();
+      //  console.log("scrapeform",e);
+        var form_values = {};
+
+        $.each($('#scrape-form').serializeArray(), function(_, kv) {
+         
+            form_values[kv.name] = kv.value
+        });
+       // console.log(form_values);
+       
+        $.ajax({ 
+            data: form_values,
+            type: 'post',
+            url: '/admin/update/',
+            success: function(data) {
+                 if(data == 'success'){
+                   console.log("success",data)
+                     jQuery('#save-button').addClass("saved");
+                     jQuery('#save-button').val("saved");
+                     jQuery('#next-link').css("visibility","visible");
+                 }
+           }
+       });
+    
+    })
+   
+
+})(jQuery)
+
 jQuery('#scraped-images input[type=radio]').on("change", function () {
     name = jQuery(this).attr('name')
     if (name == "logo_url") {
@@ -126,4 +157,7 @@ function loadLocationData(url) {
     })
 }
 
-loadLocationData(location_data_path)
+
+
+
+//loadLocationData(location_data_path)

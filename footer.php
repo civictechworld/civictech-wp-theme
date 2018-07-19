@@ -19,7 +19,7 @@
 		<div id="go-to-top" class="go-to-top btn btn-light"><i class="fa fa-angle-up"></i></div>
 	<?php endif; ?>
 </div><!-- #outer -->
-</div><!-- #page -->
+</div><!-- #page -->'<!--
 <footer id="colophon" class="site-footer clearfix" role="contentinfo">
 		<?php if(@$_GET['sponsors']){?>
 		<div id="sponsor-links">
@@ -50,8 +50,13 @@
 			
 		</div>
 
-	</footer><!-- #colophon -->
+	</footer> #colophon -->
 <?php wp_footer(); ?>
+<script>
+			jQuery(document).ready(function(){
+				jQuery(".megamenu").megamenu();
+			});
+		</script>		
 
 </body>
 </html>
