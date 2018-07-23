@@ -27,10 +27,19 @@ if(@$_GET['skip']){
     
    
 
+} else if(@$_GET['isPDF']){
+    global $wpdb;
+  
+    $set = 'UPDATE civictech_data set isPDF = 1  where id = '.$_GET['isPDF'];
+    
+    $q = $wpdb->query($set);
+    
+   
+
 }
 
 
-$sql = "no_link = 0 and scraped = 0  and error400 = 0 and error404 = 0 and isPDF = 0 and isFacebook = 0 and isTwitter = 0 and isWikipedia=0 and isLinkedIn=0 and skipped = 0 and isMedium = 0 and isArticle = 0";
+$sql = "no_link = 0 and scraped = 0  and error400 = 0 and error404 = 0 and isPDF = 0 and isFacebook = 0 and isTwitter = 0 and isWikipedia=0 and isLinkedIn=0 and skipped = 0 and isMedium = 0 and isArticle = 0 and toDelete = 0 and isPDF = 0 and isWayBackMachine = 0";
 
 $unscrapedlinks = getLinkArray($sql);
 $next = '';
@@ -46,6 +55,7 @@ foreach($unscrapedlinks as $key => $value){
         $next = '<a href="?scrape=1&key='.$value['id'].'&url='.$value['URL'].'">'.$value['name'].'</a>';
         $skip = '<a href="?scrape=1&skip='.@$_GET['key'].'&key='.$value['id'].'&url='.$value['URL'].'">SKIP</a>';
         $article = '<a href="?scrape=1&isArticle='.@$_GET['key'].'&key='.$value['id'].'&url='.$value['URL'].'">ARTICLE</a>';
+        $isPDF = '<a href="?scrape=1&isPDF='.@$_GET['key'].'&key='.$value['id'].'&url='.$value['URL'].'">PDF</a>';
         $dead = '<a href="?scrape=1&dead='.@$_GET['key'].'&key='.$value['id'].'&url='.$value['URL'].'">DEAD</a>';
     }
 }
@@ -54,7 +64,7 @@ foreach($unscrapedlinks as $key => $value){
 <h4>SCRAPED</h4>
 <div class="list-wrap">
 <?php
-$sql = "no_link = 0 and scraped = 1  and error400 = 0 and error404 = 0 and isPDF = 0 order by id DESC";
+$sql = "no_link = 0 and scraped = 1  and error400 = 0 and error404 = 0 and isPDF = 0 and id > 100 order by id ASC";
     $scrapedlinks = getLinkArray($sql);
     foreach($scrapedlinks as $key => $value){
 

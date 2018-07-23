@@ -57,7 +57,7 @@ class meta {
         }
         $image_array = array();
         $doc = new DOMDocument();
-        @$doc->loadHTML($html);
+        @$doc->loadHTML('<?xml encoding="utf-8" ?>'.$html);
     
 
         $script = $doc->getElementsByTagName('script');

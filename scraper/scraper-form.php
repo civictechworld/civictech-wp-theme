@@ -8,7 +8,7 @@
 
 
 <tr><th>Field</th><td>Scrape Data
-    <br><?=@$skip?> | <?=$article?> | <?=$dead?>
+    <br><?=@$skip?> | <?=$article?> | <?=$isPDF?> | <?=$dead?>
 </td><td><input type='submit' id="save-button" class="save" value="SAVE?"><span id="next-link" style="visibility:hidden">Next: <?=@$next?></span>
 
 </td></tr>

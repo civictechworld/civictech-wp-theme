@@ -19,7 +19,7 @@
            foreach($meta_data as $key => $value){
               
                $info = new SplFileInfo($_GET['url']);
-                if($info->getExtension() == 'pdf'){ // What do we say to pdfs? Not today.
+               /* if($info->getExtension() == 'pdf'){ // What do we say to pdfs? Not today.
                    
                     ?>
                     <h2>PDF</h2>
@@ -45,7 +45,7 @@
                     $continue = false;
                     
                 }
-       
+                */
                 if($continue != false){// HE WANTS IT, WELL, HE GETS IT
                     if($key == 'title'){
                         if(strpos($value,"|")){

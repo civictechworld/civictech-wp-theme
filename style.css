@@ -984,7 +984,9 @@ td { vertical-align: top; }
 
 .outer { position: absolute; width: 100%; top: 20%; }
 
-.hero { background-image: url(/wp-content/uploads/2018/06/networkedworld.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; }
+.hero { background-image: url(/wp-content/uploads/2018/07/hero.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; position: relative; }
+
+#logo { width: 61.8%; position: absolute; top: 0; left: 50%; margin-left: -30.9%; }
 
 .site-header { position: absolute; height: 20%; }
 
@@ -1022,5 +1024,7 @@ td { vertical-align: top; }
 .form-thumbnail { max-width: 200px; height: auto; }
 
 .scrape-thumbail { max-height: 75px; width: auto; }
+
+#results td img { width: 150px; height: auto; }
 
 /*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJzdHlsZS5jc3MiXSwiZmlsZSI6InN0eWxlLmNzcyJ9 */

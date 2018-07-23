@@ -1,5 +1,7 @@
 <?php
-	include "functions/theme.php";
+//enqueues scripts and styles
+require_once("functions/rest.php");
+include "functions/theme.php";
 	include "functions/admin.php";
 	include "functions/import.php";
 	include "functions/tagging.php";
