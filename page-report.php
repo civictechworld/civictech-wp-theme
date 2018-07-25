@@ -50,18 +50,17 @@ get_header(); ?>
                                 <tr><td>No Link</td><td><?=$no_link?></td></tr>
                                 <tr><td>Hyperlinks</td><td><?=$hyperlink?></td></tr>
                                 <tr><td>Scraped</td><td><?php echo $scraped?></td></tr>
+                                
+                                <tr><td colspan="2">Links to Public Sites
+                                    <table>
                                 <tr><td>404</td><td><?php echo $error?></td></tr>
                                 <tr><td>PDF Links</td><td><?php echo $isPDF?></td></tr>
                                 <tr><td>Article</td><td><?php echo $isArticle?></td></tr>
-                                
-                                <tr><td>Skipped</td><td><?php echo $skipped?></td></tr>
-                                <tr><td colspan="2">Links to Public Sites
-                                    <table>
-                                        <tr><td>Is Twitter</td><td><?php echo $isTwitter?></td></tr>
-                                        <tr><td>Is Facebook</td><td><?php echo $isFacebook?></td></tr>
-                                        <tr><td>is Wikipedia</td><td><?php echo $isWikipedia?></td></tr>
-                                        <tr><td>is Media</td><td><?php echo $isMedium?></td></tr>
-                                        <tr><td>WayBackMachine</td><td><?php echo $isWayBackMachine?></td></tr>
+                                <tr><td>Is Twitter</td><td><?php echo $isTwitter?></td></tr>
+                                <tr><td>Is Facebook</td><td><?php echo $isFacebook?></td></tr>
+                                <tr><td>is Wikipedia</td><td><?php echo $isWikipedia?></td></tr>
+                                <tr><td>is Media</td><td><?php echo $isMedium?></td></tr>
+                                <tr><td>WayBackMachine</td><td><?php echo $isWayBackMachine?></td></tr>
                         </table>
 
                                     </td>
@@ -99,8 +98,15 @@ get_header(); ?>
                                  
                                    <tr><th>Contact</td><td></td></tr>
                                 <tr><td>Emails</td><td><?=$email?></td></tr>
+                             <tr><td>Contact URLS</td><td><?=$phone?></td></tr>
+                            <tr><td>Blog URL</td><td><?=$blog_url?></td></tr>
+                             <tr><td>Logo URL</td><td><?=$logo_url?></td></tr>
+                              <tr><td>Events URL</td><td><?=$share_url?></td></tr>
+                              <tr><td>Conference URL</td><td><?=$conference_url?></td></tr>
+                              <tr><td>Jobs URL</td><td><?=$jobs_url?></td></tr>
+                              <tr><td>Apply URL</td><td><?=$apply_url?></td></tr>
+                              
                              <tr><td>Phone</td><td><?=$phone?></td></tr>
-
                                 
                                
                             </table>

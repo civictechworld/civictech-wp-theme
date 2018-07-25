@@ -25,7 +25,9 @@
 
 					
 			
-
+	<?php
+// do_action( 'wpml_add_language_selector' );
+	?>
 
 
 				</div><!-- .col-md-12 -->

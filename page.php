@@ -13,17 +13,15 @@
  */
 
 get_header();
-
+ //do_action('icl_navigation_breadcrumb');
 
 ?>
-<?php do_action('icl_navigation_menu', 'primary'); ?>
+<?php ///do_action('icl_navigation_menu', 'primary'); ?>
 
 <nav>
-<ul class="megamenu black">
 
-</ul>
-	</nav>
-<!--			
+
+			
 			<ul class="megamenu black">
 				<li class="active"><a href="#">Home</a></li>
 				<li><a href="#">Grid</a>
@@ -150,5 +148,5 @@ get_header();
 				</li>
 				<li class="right"><a href="#">Right</a></li>
 			</ul>
--->
+	</nav>
 <?php get_footer(); ?>

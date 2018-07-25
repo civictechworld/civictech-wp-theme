@@ -14,12 +14,24 @@
     }
 
     function getStats(){
-        $scraped = getStat("select id from civictech_data where scraped = 1");
 print        $total = getStat("select id from civictech_data");
 print "-".        $no_link = getStat("select id from civictech_data where no_link = 1",$total);
         $links = intval($total-$no_link);
         $hyperlinks = $links." / ".intval(($links/$total)*100)."%";
+        $scraped = getStat("select id from civictech_data where scraped = 1",$total);
             
+
+
+
+
+
+
+
+
+no_link = 0 and scraped = 0  and error400 = 0 and error404 = 0 and isPDF = 0 and isFacebook = 0 and isTwitter = 0 and isWikipedia=0 and isLinkedIn=0 and skipped = 0 and isMedium = 0 and isArticle = 0 and toDelete = 0 and isPDF = 0 and isWayBackMachine = 0
+
+
+
         return array(
             "total"=>$total,
             "original_records"=>getStat("select id from civictech_data where old_key>0",$total),
@@ -27,16 +39,18 @@ print "-".        $no_link = getStat("select id from civictech_data where no_lin
             "acquired"=>getStat("select id from civictech_data where acquired = 1",$total),
             "pivoted"=>getStat("select id from civictech_data where pivoted = 1",$total),
             "defunct"=>getStat("select id from civictech_data where defunct = 1",$total),
-                        "skipped"=>getStat("select id from civictech_data where skipped = 1"),
-             "no_link"=>getStat("select id from civictech_data where no_link = 1"),
-            "error404"=>getStat("select id from civictech_data where error404 = 1"),
-
-
-
-
-
+            "skipped"=>getStat("select id from civictech_data where skipped = 1",$total),
+            "no_link"=>getStat("select id from civictech_data where no_link = 1",$total),
+            "error404"=>getStat("select id from civictech_data where error404 = 1",$total),
 
             
+
+
+
+
+
+
+
 
             "no_link"=>$no_link,
             "hyperlink"=>getStat("select id from civictech_data url <> ''"),

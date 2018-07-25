@@ -64,7 +64,7 @@ foreach($unscrapedlinks as $key => $value){
 <h4>SCRAPED</h4>
 <div class="list-wrap">
 <?php
-$sql = "no_link = 0 and scraped = 1  and error400 = 0 and error404 = 0 and isPDF = 0 and id > 100 order by id ASC";
+$sql = "no_link = 0 and scraped = 1  and error400 = 0 and error404 = 0 and isPDF = 0 order by id ASC";
     $scrapedlinks = getLinkArray($sql);
     foreach($scrapedlinks as $key => $value){
 
