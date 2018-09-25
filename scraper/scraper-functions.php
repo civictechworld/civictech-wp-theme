@@ -80,6 +80,7 @@ function scrapeLink($url=''){
 	//$url = '';
 	//$url = @get_post_meta(@$_GET['post'],"url",TRUE);
 	$thisLink= "//".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+	$meta='';
 	$meta_results = '';
 	if(@$_GET['scrape']==1){
 		$meta = getMeta($url);
@@ -142,7 +143,7 @@ function parseLinks($data){
             if (strpos($value['url'], 'twitter.com') !== false && strpos($value['url'], 'share?')  != true) {
 
 //Twitter
-                $links['twitter'] = basename($value['url']);
+                $links['twitter'] = $value['url'];
 			} else if(strpos($value['url'], 'facebook.com') !== false //facebook good
 			 && strpos($value['url'], 'sharer') != true){ // share url bad
 //Facebook

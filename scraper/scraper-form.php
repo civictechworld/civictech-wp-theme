@@ -16,7 +16,7 @@
 
    <?php
    
-    $fields = "modified,URL,title,description,keywords,language,logo_url,share_image_url,logo_svgtag,contact_url,blog_url,apply_url,jobs_url,events_url,conference_url,twitter,facebook,linkedin,github,tumblr,google_plus,medium,telegram,slack,skype,instagram,youtube,vimeo,pinterest,behance,rss,email,phone,address,address2,city,state,postal_code,country,location_country,location_province,location_city,url_content";
+    $fields = "modified,URL,title,description,keywords,industry,sector,crunchbase,language,logo_url,share_image_url,logo_svgtag,contact_url,blog_url,apply_url,jobs_url,events_url,conference_url,twitter,facebook,linkedin,github,tumblr,google_plus,medium,telegram,slack,skype,instagram,youtube,vimeo,pinterest,behance,rss,email,phone,address,address2,city,state,postal_code,country,location_country,location_province,location_city,url_content";
     
 		ob_start();		
       

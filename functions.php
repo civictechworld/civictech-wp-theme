@@ -55,8 +55,13 @@ include "functions/theme.php";
     add_action('wp_ajax_contact_form', 'contact_form');
     add_action('wp_ajax_nopriv_contact_form', 'contact_form');
 
-    function contact_form()
-    {
-    
-    }
+    function linkThis($url,$label,$blank_target=true){
+        $blank_target = '';  
+        if($blank_target == true){
+          $blank_target = 'target="_blank"';
+        }
+        if($url != ''){
+          return '<a href="'.$url.'" &$blank_target>'.$label.'</a>';
+        }
+      }
 ?>
